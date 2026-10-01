@@ -6,8 +6,8 @@ Bản này dùng cùng cách tổ chức với bộ `mo-hinh-3d` bạn cung cấ
 
 ```
 index.html                  Đăng nhập
-thu-vien.html               Kho TikZ chung
-hinh-thuc-te.html           Chỉ mẫu được gắn nhãn thực tế
+thu-vien.html               Dữ liệu Hình TikZ (mỗi hình có nút Edit để copy/sửa mã, đổi tên)
+hinh-thuc-te.html           (đã bỏ) tự chuyển sang thu-vien.html
 them-mau.html               Thêm/sửa mã, build, copy và tải file
 ve-theo-de.html              Tìm mẫu và AI vẽ theo đề
 quet-hinh.html               Nhập file/folder, AI lọc hình thực tế và duyệt ảnh
@@ -63,7 +63,7 @@ Giao diện là web tĩnh; các trang dẫn nhau bằng đường dẫn tương 
 - **Giáo viên:** xem/lấy mã, build, vẽ theo đề và lưu nháp trên máy; không thêm mẫu vào kho chung.
 - **Học sinh:** xem và lấy mã mẫu; máy chủ từ chối yêu cầu build/AI/sửa kho.
 
-Bạn là người gửi mẫu: tab Hình thực tế chỉ hiện nhãn `real`, các hình toán cơ bản vẫn nằm ở các khối lớp trong Kho TikZ. Hình thực tế có thể gắn thêm khối lớp mà không cần lưu trùng file.
+Bạn là người gửi mẫu: mọi hình (thực tế và toán cơ bản) đều nằm trong Dữ liệu Hình TikZ, lọc theo khối lớp và chủ đề. Hình thực tế có thể gắn thêm khối lớp mà không cần lưu trùng file.
 
 Mỗi mẫu lưu `.tex` chỉ chứa một khối hình và một ảnh, kèm liên kết/phân loại trong `danh-muc.json`. Ảnh và mã nằm trên Drive, không nhúng cứng vào mã web. Máy chủ đọc lại file .tex của những mẫu được chọn trước khi gọi AI. Cần kiểm tra mã/hình AI tạo trước khi lưu.
 

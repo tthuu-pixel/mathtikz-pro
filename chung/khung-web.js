@@ -3,7 +3,7 @@
   document.addEventListener('DOMContentLoaded',function(){
     GiaoDien.thanhTren({anQuanTri:document.body.dataset.trang==='quan-tri'});DangNhap.kiemTraMayChu();
     var page=document.body.dataset.trang,nav=document.getElementById('menu');
-    var links=[['thu-vien.html','Kho TikZ','kho'],['hinh-thuc-te.html','Hình thực tế','thuc-te'],['ve-theo-de.html','Vẽ theo đề bài','ve'],['them-mau.html','Thêm mẫu','sua'],['cai-dat.html','Cài đặt','cai-dat']];
+    var links=[['thu-vien.html','Dữ liệu Hình TikZ','kho'],['them-mau.html','Thêm mẫu','sua'],['ve-theo-de.html','Vẽ theo đề bài','ve'],['cai-dat.html','Cài đặt','cai-dat']];
     if((DangNhap.phien()||{}).vaiTro==='admin'){links.splice(3,0,['quet-hinh.html','Quét hình thực tế','quet']);links.push(['quan-tri.html','Quản trị','quan-tri']);}
     if(nav)nav.innerHTML=links.map(function(x){return '<a class="'+(page===x[2]?'bat':'')+'" href="'+x[0]+'">'+x[1]+'</a>';}).join('');
     var note=document.getElementById('trang-thai-kho');if(note)note.textContent=API.chayThu?'Chạy thử · bản nháp trên máy':'Kho Google Drive · Apps Script';

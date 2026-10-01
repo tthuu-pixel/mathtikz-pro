@@ -74,3 +74,15 @@ body[data-trang="quet"] #scan-removed:empty{display:none}
 @media(max-width:1200px){.scan-toolbar .scan-actions{justify-content:flex-start}.scan-layout{gap:16px}}
 @media(max-width:950px){body[data-trang="quet"] .scan-queue{min-height:0}body[data-trang="quet"] .scan-review{min-height:300px}}
 @media(max-width:650px){.scan-upload{padding:14px}.scan-extras{grid-template-columns:1fr}.scan-help[open]{max-width:none}.scan-status-row{align-items:flex-start}body[data-trang="quet"] .dau-trang h1{font-size:22px}}
+/* Nút Edit trên thẻ hình + hộp sửa nhanh */
+.mau-khung{position:relative;display:flex;min-width:0}
+.mau-khung>.mau{flex:1;min-width:0}
+.nut.nho.nut-sua{position:absolute;top:10px;right:10px;z-index:2;min-height:28px;padding:2px 11px;font-size:12px;border-radius:7px;opacity:.88;box-shadow:0 2px 8px #0005}
+.nut.nho.nut-sua:hover,.nut.nho.nut-sua:focus-visible{opacity:1}
+dialog.hop-sua{width:min(880px,calc(100vw - 32px));max-width:none;border:1px solid #3a4d66;border-radius:12px;padding:22px}
+.hop-sua h2{margin:0 0 14px;font-size:20px}
+.hop-sua label{display:block;font-weight:600;margin-bottom:14px}
+.hop-sua textarea.o-nhap{min-height:340px;max-height:60vh;font-family:Consolas,'Cascadia Mono',ui-monospace,monospace;font-size:13px;line-height:1.55;white-space:pre;overflow:auto;tab-size:2}
+.hop-sua .hang-nut{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.hop-sua .gian{flex:1}
+.hop-sua .hs-loi{color:#f18f8f;white-space:pre-wrap;margin:0 0 12px}
