@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <g stroke="#8bc9f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Triangle and angle marks. -->
+    <g opacity=".28" transform="translate(555 105) rotate(12)">
+      <path d="M0 145 85 0 185 145Z M29 145a29 29 0 0 1 16-26 M85 0v145"/>
+      <path d="M85 145h12v-12"/><path d="M85 0v145" stroke-dasharray="5 7"/>
+      <g fill="#8bc9f1" stroke="none"><circle cy="145" r="3"/><circle cx="85" r="3"/><circle cx="185" cy="145" r="3"/></g>
+    </g>
+    <!-- Circle, radius, chord and construction lines. -->
+    <g opacity=".13" transform="translate(723 476)">
+      <circle r="106"/><circle r="79" stroke-dasharray="2 10"/>
+      <path d="M-106 0h212M0-106v212" stroke-dasharray="5 8"/>
+      <path d="M0 0 79-71 81 68Z"/><circle r="3" fill="#8bc9f1"/>
+    </g>
+    <!-- Perspective prism. -->
+    <g opacity=".23" transform="translate(553 752) rotate(-8)">
+      <path d="m0 44 100-44 100 44-100 46Z M0 44v124l100 46 100-46V44 M100 90v124"/>
+      <path d="M100 0v124L0 168M100 124l100 44" stroke-dasharray="5 7"/>
+      <g fill="#8bc9f1" stroke="none"><circle cy="44" r="3"/><circle cx="100" cy="90" r="3"/><circle cx="200" cy="168" r="3"/></g>
+    </g>
+    <!-- Ladder leaning against a wall: a real-world TikZ motif. -->
+    <g opacity=".13" transform="translate(65 748) rotate(-7)">
+      <path d="M0 156h205M159 156V0 M47 152 142 11 M64 156 159 15 M60 134l17 4M76 110l18 4M91 87l19 5M107 63l18 5M123 39l18 5"/>
+      <path d="M169 8h13m-13 22h13m-13 22h13m-13 22h13m-13 22h13m-13 22h13" opacity=".5"/>
+    </g>
+  </g>
+  <g fill="#8bc9f1" opacity=".16"><circle cx="412" cy="94" r="2"/><circle cx="506" cy="276" r="2"/><circle cx="340" cy="881" r="2"/><circle cx="488" cy="682" r="2"/></g>
+</svg>

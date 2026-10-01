@@ -1,0 +1,3 @@
+document.getElementById('thu').hidden=!API.chayThu;
+document.getElementById('hien-mk').onclick=function(){var input=document.getElementById('mk'),show=input.type==='password';input.type=show?'text':'password';this.setAttribute('aria-pressed',String(show));this.setAttribute('aria-label',show?'Ẩn mật khẩu':'Hiện mật khẩu');};
+document.getElementById('form').onsubmit=async function(e){e.preventDefault();var b=document.getElementById('gui'),loi=document.getElementById('loi');b.disabled=true;loi.hidden=true;try{var r=await DangNhap.dangNhap(document.getElementById('ten').value,document.getElementById('mk').value);if(!r.ok)throw Error(r.loi);DangNhap.veThuVien();}catch(e){loi.textContent=e.message;loi.hidden=false;}finally{b.disabled=false;}};
