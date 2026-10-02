@@ -86,3 +86,5 @@ dialog.hop-sua{width:min(880px,calc(100vw - 32px));max-width:none;border:1px sol
 .hop-sua .hang-nut{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .hop-sua .gian{flex:1}
 .hop-sua .hs-loi{color:#f18f8f;white-space:pre-wrap;margin:0 0 12px}
+.nut.nut-ai{border-color:#8b6fd6;color:#d6c8ff;background:#2a2342}
+.nut.nut-ai:hover{background:#372d58;border-color:#a78bfa}

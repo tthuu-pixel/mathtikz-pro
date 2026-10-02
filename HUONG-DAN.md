@@ -8,7 +8,7 @@ Bản này dùng cùng cách tổ chức với bộ `mo-hinh-3d` bạn cung cấ
 index.html                  Đăng nhập
 thu-vien.html               Dữ liệu Hình TikZ (mỗi hình có nút Edit để copy/sửa mã, đổi tên)
 hinh-thuc-te.html           (đã bỏ) tự chuyển sang thu-vien.html
-them-mau.html               Thêm/sửa mã, build, copy và tải file
+them-mau.html               Thêm/sửa mã, build, AI sửa mã khi lỗi, copy và tải file
 ve-theo-de.html              Tìm mẫu và AI vẽ theo đề
 quet-hinh.html               Nhập file/folder, AI lọc hình thực tế và duyệt ảnh
 cai-dat.html                API của 4 hãng, macro, máy chủ, mật khẩu
@@ -27,6 +27,7 @@ apps-script/
   Code.gs                   Tài khoản và phân quyền
   KhoTikz.gs                Drive, build TikZ và AI
   AI.gs                     Gemini, OpenAI, Claude, DeepSeek và nhận dạng
+  SuaMa.gs                  Lệnh suaMaAI: build lấy log lỗi, AI sửa, build kiểm tra lại
   appsscript.json           Quyền dịch vụ Google
 ```
 
@@ -104,6 +105,13 @@ Chế độ chưa nối Apps Script cho phép tách mã, xem mã gốc và rende
 - Sửa HTML/JS/CSS: tải lại đúng file đã sửa trên GitHub.
 - Sửa Apps Script: cập nhật triển khai sang phiên bản mới để URL `/exec` dùng mã mới.
 - Thêm mẫu: chỉ lưu mẫu trên Drive, không cần sửa hay tải lại mã web.
+
+## 8b. Nút AI sửa mã (trang Thêm mẫu)
+
+- Khi mã build lỗi, bấm **AI sửa mã**. Máy chủ build thử để lấy log lỗi, gửi mã + log + macro chung cho hãng/model đang chọn trong Cài đặt, rồi build lại mã AI trả về. Nếu còn lỗi, web tự cho AI sửa thêm 1 lần (tối đa 2 lần mỗi lần bấm).
+- Mã AI sửa chỉ thay trong khung soạn, chưa lưu Drive. Nút **Khôi phục mã trước khi AI sửa** đưa mã về như trước lần bấm gần nhất.
+- Admin và giáo viên dùng được; học sinh không thấy nút. Giới hạn 6 lần gọi/phút mỗi người.
+- Cài máy chủ: thêm tệp `SuaMa.gs` vào dự án Apps Script, thêm vào `xuLyTikz_` (KhoTikz.gs) dòng `case 'suaMaAI': canVe_(user);hanMuc_(user.ten,'ai-fix',6);return suaMaAI_(d);` rồi triển khai phiên bản mới.
 
 ## 9. Tình trạng kiểm tra
 

@@ -146,7 +146,7 @@
   /* ---------------- Gọi API ---------------- */
   var API = {
     chayThu: CHAY_THU,
-    goi: function (hd, duLieu) {
+    goi: function (hd, duLieu, thoiGian) {
       duLieu = duLieu || {};
       var p = Phien.lay();
       if (CHAY_THU) {
@@ -154,7 +154,7 @@
       }
       var goi = Object.assign({ hd: hd, token: p ? p.token : '' }, duLieu);
       // text/plain để không phát sinh yêu cầu CORS "preflight" với Apps Script
-      return fetch(CH.API_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify(goi), redirect: 'follow', signal: AbortSignal.timeout(120000) })
+      return fetch(CH.API_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify(goi), redirect: 'follow', signal: AbortSignal.timeout(thoiGian || 120000) })
         .then(function (r) { return r.json(); })
         .then(function (kq) {
           if (kq && kq.hetPhien) { Phien.xoa(); veDangNhap(); }
